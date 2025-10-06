@@ -25,6 +25,7 @@ public class Zestaw1{
     //zadanie_3();
     zadanie_4();
     zadanie_9();
+    System.out.println(zadanie_15());
     }
 
     // Zadanie 1.
@@ -150,7 +151,7 @@ public class Zestaw1{
             System.out.println("Twoja liczba nie jest parzysta");
         }
     }
-    
+
     // Zadanie 10.
     // Napisz program, który pobiera od użytkownika trzy liczby
     // i wypisuje je w kolejności rosnącej.
@@ -169,7 +170,7 @@ public class Zestaw1{
                 if (y > z){
                     System.out.printf("%s %s %s",x, y, z);
                 }
-                    
+
                 }
         }
     }
@@ -192,8 +193,8 @@ public class Zestaw1{
         float a = MyObj.nextFloat();
         System.out.print("Podaj b: ");
         float b = MyObj.nextFloat();
-        
-        
+
+
 
     }
 
@@ -209,13 +210,13 @@ public class Zestaw1{
         float b = MyObj.nextFloat();
         System.out.print("Podaj c: ");
         float c = MyObj.nextFloat();
-        
+
         if(a+b > c && a+c > b && b+c > a){
             System.out.println("Można zbudować trójkąt");
         } else {
             System.out.println("Nie można zbudować trójkątu");
         }
-        
+
     }
 
     // Zadanie 14.
@@ -250,6 +251,8 @@ public class Zestaw1{
         int m = MyObj.nextInt();
         System.out.print("Podaj n: ");
         int n = MyObj.nextInt();
+
+        return m % n;
     }
 
     // Zadanie 16.
@@ -263,7 +266,18 @@ public class Zestaw1{
     // Kwota zmniejszająca podatek wynosi 3 600 zł.
 
     void zadanie_16(){
-
+        Scanner MyObj = new Scanner(System.in);
+        System.out.print("Podaj dochdów: ");
+        float m = MyObj.nextFloat();
+        
+        if(m <= 30000){
+            System.out.println("0 zł");
+        } else if(m > 30000 && m <= 120000){
+            System.out.println((m*0.12 - 3600) + " zł");
+        } else if(m > 120000 && m < 1000000){
+            System.out.println((m*0.32 - 3600) + " zł");
+        } else if()
+        
     }
 
     // Zadanie 17.
