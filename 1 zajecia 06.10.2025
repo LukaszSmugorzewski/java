@@ -1,0 +1,390 @@
+package zestaw1;
+
+// Programowanie obiektowe
+// ----------------------------------------
+// Podstawowe operacje wejścia/wyjścia,
+// arytmetyczne, instrukcje warunkowe oraz pętle.
+// ----------------------------------------
+// mgr inż. Adam Zalewski
+// University of Warmia and Mazury in Olsztyn
+// Faculty of Mathematics and Computer Science
+// Institute of Computer Science
+// Chair of Applied Computer Science and Mathematical Mo
+
+
+import java.util.Scanner;
+
+public class Zestaw1{
+
+    // Zadanie 0.
+    // Napisz funkcję główną (main).
+
+    public static void main(String[] args) {
+    //zadanie_1();
+    //zadanie_2();
+    //zadanie_3();
+    zadanie_4();
+    zadanie_9();
+    }
+
+    // Zadanie 1.
+    // Wypisz swoje imię i nazwisko na ekranie.
+
+    static void zadanie_1(){
+        System.out.println("Łukasz Smugorzewski");
+
+    }
+
+    // Zadanie 2.
+    // Wypisz długość imienia i nazwiska.
+
+    static void zadanie_2(){
+        String txt = "Łukasz Smugorzewski";
+        System.out.println("Długość imienia i nazwiska: " + txt.length());
+
+    }
+
+    // Zadanie 3.
+    // Za pomocą printf połącz 3 wyrazy "Ala" "ma" "kota"
+    // w jeden i wyświetl go na ekranie.
+
+    static void zadanie_3(){
+        String text1 = "ala";
+        String text2 = "ma";
+        String text3 = "kota";
+        System.out.printf("%s %s %s \n",text1,text2,text3);
+
+    }
+
+    // Zadanie 4.
+    // W zdaniu „Ala ma kota” zastąp
+    // wszystkie litery „a” literą „e”.
+
+    static void zadanie_4(){
+        String text1 = "ala ma kota";
+        System.out.println(text1.replace('a','e'));
+    }
+
+    // Zadanie 5.
+    // Napisz program, który będzie pobierał dwa słowa
+    // od użytkownika i wypisywał je na ekranie.
+
+    static void zadanie_5(){
+
+        Scanner MyObj = new Scanner(System.in);
+        System.out.println("Napisz pierwsze słowo: ");
+        String text1 = MyObj.nextLine();
+
+        System.out.println("Napisz DRugie słowo: ");
+        String text2 = MyObj.nextLine();
+
+        System.out.printf("twoje słowa to: %s %s",text1,text2);
+
+
+        }
+
+
+    // Zadanie 6.
+    // Napisz program, który będzie pobierał dwie liczby od
+    // użytkownika i wypisał ich sumę, różnicę, iloczyn i iloraz.
+
+    void zadanie_6(){
+        Scanner myObj = new Scanner(System.in);
+        System.out.print("Podaj pierwszą liczbę: ");
+        float x = myObj.nextFloat();
+
+        System.out.print("Podaj drugą liczbę: ");
+        float y = myObj.nextFloat();
+
+        System.out.println(x+y);
+        System.out.println(x-y);
+        System.out.println(x*y);
+        System.out.println(x/y);
+
+    }
+
+    // Zadanie 8.
+    // Napisz program, który będzie pobierał
+    // liczbę x od użytkownika i wypisał tę liczbę:
+    //      • Powiększoną o 140
+    //      • Pomniejszoną o 31
+    //      • Powiększoną 7 razy
+    //      • Pomniejszoną 13 razy
+    //      • Modulo 7
+    //      • Część całkowita z dzielenia przez 4
+    //      • Podniesioną do potęgi 45
+    //      • Iloczyn bitowy z 67
+    //      • Suma bitowa z 59
+    //      • XOR z 23
+    //      • Przesuniętą o 5 bitów w lewo
+    //      • Przesuniętą o 6 bitów w prawo
+
+     static void zadanie_8(){
+        Scanner MyObj = new Scanner(System.in);
+        System.out.print("Podaj liczbę: ");
+        int x = MyObj.nextInt();
+
+        System.out.println(x+140);
+        System.out.println(x-31);
+        System.out.println(x*7);
+        System.out.println(x/13);
+        System.out.println(x%7);
+        System.out.println(Math.floor(x/4));
+        System.out.println(Math.pow(x,45));
+        System.out.println(x&67);
+
+    }
+
+    // Zadanie 9.
+    // Napisz program, który sprawdza czy podana
+    // liczba jest parzysta i wypisuje odpowiedni komunikat.
+
+    static void zadanie_9() {
+        Scanner MyObj = new Scanner(System.in);
+        System.out.print("Podaj liczbę: ");
+        int x = MyObj.nextInt();
+
+        if(x % 2 == 0){
+            System.out.println("twoja liczba jest parzysta");
+        } else {
+            System.out.println("Twoja liczba nie jest parzysta");
+        }
+    }
+    
+    // Zadanie 10.
+    // Napisz program, który pobiera od użytkownika trzy liczby
+    // i wypisuje je w kolejności rosnącej.
+
+    void zadanie_10(){
+        Scanner MyObj = new Scanner(System.in);
+        System.out.print("Podaj 1 liczbę: ");
+        int x = MyObj.nextInt();
+        System.out.print("Podaj 2 liczbę: ");
+        int y = MyObj.nextInt();
+        System.out.print("Podaj 3 liczbę: ");
+        int z = MyObj.nextInt();
+
+        if(x > y) {
+            if (x > z) {
+                if (y > z){
+                    System.out.printf("%s %s %s",x, y, z);
+                }
+                    
+                }
+        }
+    }
+
+    // Zadanie 11.
+    // Napisz program, który pobiera od użytkownika trzy liczby
+    // i wypisuje je w kolejności malejącej.
+
+    void zadanie_11(){
+
+    }
+
+    // Zadanie 12.
+    // Napisz program, który rozwiązuje równanie liniowe ax + b = 0
+    // o parametrach a i b podanych przez użytkownika.
+
+    static void zadanie_12(){
+        Scanner MyObj = new Scanner(System.in);
+        System.out.print("Podaj a: ");
+        float a = MyObj.nextFloat();
+        System.out.print("Podaj b: ");
+        float b = MyObj.nextFloat();
+        
+        
+
+    }
+
+    // Zadanie 13.
+    // Napisz program, który pobiera od użytkownika wartości parametrów
+    // a, b i c, i sprawdza czy można z nich zbudować trójkąt.
+
+    static void zadanie_13(){
+        Scanner MyObj = new Scanner(System.in);
+        System.out.print("Podaj a: ");
+        float a = MyObj.nextFloat();
+        System.out.print("Podaj b: ");
+        float b = MyObj.nextFloat();
+        System.out.print("Podaj c: ");
+        float c = MyObj.nextFloat();
+        
+        if(a+b > c && a+c > b && b+c > a){
+            System.out.println("Można zbudować trójkąt");
+        } else {
+            System.out.println("Nie można zbudować trójkątu");
+        }
+        
+    }
+
+    // Zadanie 14.
+    // Napisz program, który pobiera od użytkownika wartości parametrów
+    // a, b i c, które powinny być bokami pewnego trójkąta
+    // i sprawdza czy trójkąt jest ostrokątny, prostokątny czy rozwartokątny.
+
+    static void zadanie_14(){
+        Scanner MyObj = new Scanner(System.in);
+        System.out.print("Podaj a: ");
+        float a = MyObj.nextFloat();
+        System.out.print("Podaj b: ");
+        float b = MyObj.nextFloat();
+        System.out.print("Podaj c: ");
+        float c = MyObj.nextFloat();
+        if(a*a + b*b == c*c){
+            System.out.println("Trójkąt prostokątny");
+        } else if(a*a + b*b > c*c){
+            System.out.println("Trójkąt rozwartokątny");
+        } else {
+            System.out.println("Trójkąt rozwartokątny");
+        }
+    }
+
+    // Zadanie 15.
+    // Napisz program, który pobiera od użytkownika liczbę m oraz n
+    // i zwraca resztę z dzielenia m przez n.
+
+    static int zadanie_15(){
+        Scanner MyObj = new Scanner(System.in);
+        System.out.print("Podaj m: ");
+        int m = MyObj.nextInt();
+        System.out.print("Podaj n: ");
+        int n = MyObj.nextInt();
+    }
+
+    // Zadanie 16.
+    // Napisz program, który oblicza podatek należny
+    // na podstawie kwoty dochodu podanej przez użytkownika
+    // i następujących progów podatkowych:
+    //      Kwota wolna od podatku: 30 000 zł
+    //      I próg podatkowy: do 120 000 zł stawka 12%
+    //      II próg podatkowy: od 120 000 zł stawka 32%
+    //      Danina solidarnościowa: od 1 000 000 zł stawka 4%
+    // Kwota zmniejszająca podatek wynosi 3 600 zł.
+
+    void zadanie_16(){
+
+    }
+
+    // Zadanie 17.
+    // Napisz program, który pobiera od użytkownika liczbę n
+    // i wypisze dla długości boków od 1 do n
+    // wszystkie trójki pitagorejskie.
+
+    void zadanie_17(){
+
+    }
+
+    // Zadanie 18.
+    // Napisz program, który pobiera od użytkownika liczbę n
+    // i wypisze wszystkie liczby pierwsze od 2 do n.
+
+    void zadanie_18(){
+
+    }
+
+    // Zadanie 19.
+    // Napisz program, który pobiera od użytkownika liczbę m i n,
+    // a następnie wypisze wszystkie liczby m-cyfrowe,
+    // które podzielne są przez n.
+
+    void zadanie_19(){
+
+    }
+
+    // Zadanie 20.
+    // Napisz program, który wypisze piramidę z gwiazdek (*)
+    // w dwóch wariantach, której wysokość jest liczbą n.
+    // Program powinien przyjmować dwa argumenty - n (wysokość) i v (wariant).
+
+    void zadanie_20(){
+
+    }
+
+    // Zadanie 21.
+    // Napisz program, który obliczy i zwróci silnie liczby n.
+    // Program powinien przyjmować jeden argument - liczbę n.
+
+    void zadanie_21(){
+
+    }
+
+    // Zadanie 22.
+    // Napisz program, który obliczy i zwróci silnie podwójną liczby n.
+    // Program powinien przyjmować jeden argument - liczbę n.
+
+    void zadanie_22(){
+
+    }
+
+    // Zadanie 23.
+    // Napisz program, który obliczy i zwróci silnie m-tą liczby n.
+    // Program powinien przyjmować dwa argumenty - liczbę m oraz n.
+
+    void zadanie_23(){
+
+    }
+
+    // Zadanie 24.
+    // Napisz program, który obliczy i zwróci sumę n
+    // kolejnych liczb naturalnych.
+    // Program powinien przyjmować jeden argument - liczbę n.
+
+    void zadanie_24(){
+
+    }
+
+    // Zadanie 25.
+    // Napisz program, który obliczy i zwróci sumę n
+    // kolejnych liczb parzystych.
+    // Program powinien przyjmować jeden argument - liczbę n.
+
+    void zadanie_25(){
+
+    }
+
+    // Zadanie 26.
+    // Napisz program, który obliczy i zwróci sumę n
+    // kolejnych liczb nieparzystych.
+    // Program powinien przyjmować jeden argument - liczbę n.
+
+    void zadanie_26(){
+
+    }
+
+    // Zadanie 27.
+    // Napisz program, który obliczy i zwróci sumę n
+    // liczb będących kwadratami kolejnych liczb naturalnych.
+    // Program powinien przyjmować jeden argument - liczbę n.
+
+    void zadanie_27(){
+
+    }
+
+    // Zadanie 28.
+    // Napisz program, który obliczy i zwróci sumę n
+    // liczb będących sześcianami kolejnych liczb naturalnych.
+    // Program powinien przyjmować jeden argument - liczbę n.
+
+    void zadanie_28(){
+
+    }
+
+    // Zadanie 29.
+    // Napisz program, który obliczy i zwróci sumę n
+    // liczb będących odwrotnościami kolejnych liczb naturalnych.
+    // Program powinien przyjmować jeden argument - liczbę n.
+
+    void zadanie_29(){
+
+    }
+
+    // Zadanie 30.
+    // Napisz program, który sprawdza (prawda/fałsz)
+    // czy liczba n jest doskonała.
+    // Program powinien przyjmować jeden argument - liczbę n.
+
+    void zadanie_30(){
+
+    }
+}
