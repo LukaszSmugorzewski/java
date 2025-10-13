@@ -285,7 +285,24 @@ public class Zestaw1{
     // i wypisze dla długości boków od 1 do n
     // wszystkie trójki pitagorejskie.
 
-    void zadanie_17(){
+    static void zadanie_17(){
+
+    static void zadanie_17(){
+        Scanner scn = new Scanner(System.in);
+        System.out.println("Podaj n: ");
+        int n = scn.nextInt();
+
+        for(int i = 1; i<n; i++){
+            for(int j = 1; j<i; j++){
+                for(int l = 1; l<j; l++){
+                    if(j*j+l*l==i*i){
+                        System.out.println(i + ", " + j + ", " + l);
+                    }
+                }
+            }
+        }
+    }
+    
 
     }
 
@@ -293,8 +310,23 @@ public class Zestaw1{
     // Napisz program, który pobiera od użytkownika liczbę n
     // i wypisze wszystkie liczby pierwsze od 2 do n.
 
-    void zadanie_18(){
+    static void zadanie_18() {
+        Scanner scn = new Scanner(System.in);
+        System.out.println("Podaj n: ");
+        int n = scn.nextInt();
 
+        for (int i = 2; i <= n; i++) {
+            boolean flaga = true;
+            for (int j = 2; j <= i/2; j++) {
+                if (i % j == 0) {
+                    flaga = false;
+                    break;
+                }
+            }
+            if (flaga == true) {
+                System.out.println(i);
+            }
+        }
     }
 
     // Zadanie 19.
@@ -302,9 +334,22 @@ public class Zestaw1{
     // a następnie wypisze wszystkie liczby m-cyfrowe,
     // które podzielne są przez n.
 
-    void zadanie_19(){
+    static void zadanie_19(){
+        Scanner scn = new Scanner(System.in);
+        System.out.println("Podaj n: ");
+        int n = scn.nextInt();
+        System.out.println("Podaj m: ");
+        int m = scn.nextInt();
+        int start = (int)Math.pow(10,m - 1);
+        int koniec = (int)Math.pow(10,m);
+        for(int j = start; j <=koniec-1; j++){
+            if(j % n == 0) {
+                System.out.println(j);
+            }
 
-    }
+            }
+
+        }   popraw to
 
     // Zadanie 20.
     // Napisz program, który wypisze piramidę z gwiazdek (*)
@@ -319,24 +364,36 @@ public class Zestaw1{
     // Napisz program, który obliczy i zwróci silnie liczby n.
     // Program powinien przyjmować jeden argument - liczbę n.
 
-    void zadanie_21(){
-
+    static int zadanie_21(int n){
+        int wynik = 1;
+        for(int i = 1; i<=n; i++){
+            wynik *= i;
+        }
+        return wynik;
     }
 
     // Zadanie 22.
     // Napisz program, który obliczy i zwróci silnie podwójną liczby n.
     // Program powinien przyjmować jeden argument - liczbę n.
 
-    void zadanie_22(){
-
-    }
+    static int zadanie_22(int n){
+        int wynik = 1;
+        for(int i = 1; i<=n; i-=2){
+            wynik *= i;
+        }
+        return wynik;
+    } nie dziala
 
     // Zadanie 23.
     // Napisz program, który obliczy i zwróci silnie m-tą liczby n.
     // Program powinien przyjmować dwa argumenty - liczbę m oraz n.
 
-    void zadanie_23(){
-
+    static int zadanie_23(int m, int n){
+        int wynik = 1;
+        for(int i = n; i>1; i-=m){
+            wynik *= i;
+        }
+        return wynik;
     }
 
     // Zadanie 24.
