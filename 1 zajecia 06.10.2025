@@ -455,7 +455,17 @@ public class Zestaw1{
     // czy liczba n jest doskonała.
     // Program powinien przyjmować jeden argument - liczbę n.
 
-    void zadanie_30(){
-
+    static boolean zadanie_30(int n){
+        int x = 0;
+        for(int i = 1; i<=n; i++){
+            if(n % i == 0){
+                x+=i;
+            }
+            if(x == n){
+                return true;
+            }
+        }
+        return false;
     }
+
 }
