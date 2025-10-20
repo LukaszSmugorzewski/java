@@ -9,13 +9,15 @@
 // Chair of Applied Computer Science and Mathematical Modeling
 
 import java.util.Scanner;
+import java.util.Arrays;
 
 public class Zestaw2 {
-
     // Zadanie 0.
     // Napisz funkcję główną (main).
-    public static void main(String args[]){
-        System.out.println(zadanie_1(5,2,10));
+    public static void main(String[] args){
+        int[] tab = generujTablice(100, -20, 20);
+        System.out.println(Arrays.toString(tab));
+        System.out.println(zadanie_22(tab));
     }
 
 
@@ -284,23 +286,48 @@ public class Zestaw2 {
     // Wykorzystując funkcję z zadania 1. napisz funkcje najdluzszyCiagDodatnich(tab),
     // która wykonuje odpowiednie operacje na tablicy.
 
-    static void zadanie_21(int n){
-    static int[] zadanie_1(int n, int minWartosc, int maxWartosc){
-        int[] tab = new int[n];
-        for(int i = 0; i < n; i++){
-            tab[i] = (int)(Math.random() * (maxWartosc - minWartosc + 1)) + minWartosc;
-        }
-        return tab;
-    }
-    
+    static int zadanie_21(int[] tab) {
+        int i = 0;
+        int counter = 0;
+        int result = 0;
 
+        while (i < tab.length) {
+            if (tab[i] > 0) {
+                i++;
+                counter++;
+            } else {
+                if (counter > result) {
+                    result = counter;
+                }
+                counter = 0;
+                i++;
+            }
+        }
+        return result;
     }
 
     // Zadanie 22.
     // Wykorzystując funkcję z zadania 1. napisz funkcje najdluzszyCiagUjemnych(tab),
     // która wykonuje odpowiednie operacje na tablicy.
 
-    static void zadanie_22(){
+    static int zadanie_22(int tab[]){
+        int i = 0;
+                int counter = 0;
+        int result = 0;
+
+        while(i < tab.length){
+            if(tab[i] < 0){
+                i++;
+                counter++;
+            } else {
+                if(counter > result){
+                    result = counter;
+                }
+                counter = 0;
+                i++;
+            }
+        }
+        return result;
 
     }
 
@@ -324,7 +351,12 @@ public class Zestaw2 {
     //  Napisz funkcję generujZakres(n, minWartosc, maxWartosc),
     //  która generuje tablicę liczb o równych odstępach od siebie.
 
-    static void zadanie_25(){
-
+    static double[] zadanie_25(int n, double minWartosc, double maxWartosc){
+        double[] result = new double[n];
+        double step = (maxWartosc - minWartosc) / (n-1);
+        for(int i = 0; i < n; i++){
+            result[i] = minWartosc + i * step;
+        }
+        return result;
     }
 }
