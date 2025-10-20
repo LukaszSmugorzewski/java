@@ -85,8 +85,15 @@ public class Zestaw2 {
     //  Wykorzystując funkcję z zadania 1. napisz funkcje ileZerowych(tab)
     //  zliczające ilość liczb o wartości zero w tablicy.
 
-    static void zadanie_7(){
+    static void zadanie_7(int[] tab){
+        int ilosc = 0;
 
+        for(int i = 0; i < tab.length; i++){
+            if(tab[i] == 0){
+                ilosc++;
+            }
+        }
+        return ilosc;
     }
 
     // Zadanie 8.
@@ -201,7 +208,7 @@ public class Zestaw2 {
             wynik += tab[i];
         }
 
-        return Math.pow(wynik, 1/tab.length);
+        return Math.pow(wynik, 1.0    /tab.length);
     }
 
     // Zadanie 16.
@@ -216,36 +223,76 @@ public class Zestaw2 {
     // Zadanie 17.
     // Napisz funkcje funkcjaLiniowa(tab, a, b) zwracające tablice wartości funkcji.
 
-    static void zadanie_17(){
+    static double[] zadanie_17(int[] tab, double a , double b){
+        double[] result = new double[tab.length];
+
+            for(int i = 0; i < tab.length; i++){
+            result[i] = a * tab[i] + b;
+        }
+
+        return result;
 
     }
 
     // Zadanie 18.
     // Napisz funkcje funkcjaKwadratowa(tab, a, b, c) zwracające tablice wartości funkcji.
 
-    static void zadanie_18(){
+    static double[] zadanie_18(int[] tab, double a , double b, double c){
+        double[] result = new double[tab.length];
+
+            for(int i = 0; i < tab.length; i++){
+            result[i] = a * tab[i] * tab[i] + b * tab[i] + c;
+        }
+
+        return result;
 
     }
 
     // Zadanie 19.
     // Napisz funkcje funkcjaWykladnicza(tab, a, b) zwracające tablice wartości funkcji.
 
-    static void zadanie_19(){
+        static void zadanie_19(int[] tab, double a, double b){
+        double[] result = new double[tab.length];
+
+        for(int i = 0; i < tab.length; i++){
+            result[i] = 
+        }
 
     }
 
     // Zadanie 20.
     // Napisz funkcje funkcjaSignum(tab) zwracające tablice wartości funkcji.
 
-    static void zadanie_20(){
-
+    static int[] funkcjaSignum(int[] tab){
+        int[] tablica = new int[tab.length];
+        for (int i = 0; i < tab.length; i++){
+            if (tab[i] > 0) {
+                tablica[i] = 1;
+            }
+            else if (tab[i] < 0){
+                tablica[i] = -1
+            }
+            else {
+                tablica[i] = 0
+            }
+        }
+    return tablica;
     }
+
 
     // Zadanie 21.
     // Wykorzystując funkcję z zadania 1. napisz funkcje najdluzszyCiagDodatnich(tab),
     // która wykonuje odpowiednie operacje na tablicy.
 
-    static void zadanie_21(){
+    static void zadanie_21(int n){
+    static int[] zadanie_1(int n, int minWartosc, int maxWartosc){
+        int[] tab = new int[n];
+        for(int i = 0; i < n; i++){
+            tab[i] = (int)(Math.random() * (maxWartosc - minWartosc + 1)) + minWartosc;
+        }
+        return tab;
+    }
+    
 
     }
 
