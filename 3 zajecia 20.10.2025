@@ -222,3 +222,23 @@ public class Zestaw3 {
 
     }
 }
+
+static ArrayList<ArrayList<Integer>> uniqueArrayList(ArrayList<Integer> tab){
+    ArrayList<ArrayList<Integer>> wynik = new ArrayList<>();
+    ArrayList<Integer> unikalne = new ArrayList<>();
+
+    for(int i = 0; i < tab.size(); i++){
+        int liczba = tab.get(i);
+        if (!unikalne.contains(liczba)) {
+            unikalne.add(liczba);
+        }
+    }
+
+    for (int i = 0; i < unikalne.size(); i++){
+        ArrayList<Integer> para = new ArrayList<>();
+        para.add(unikalne.get(i));
+        para.add(0);
+        wynik.add(para);
+    }
+    return wynik;
+}
