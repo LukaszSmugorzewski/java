@@ -87,7 +87,7 @@ public class Zestaw3 {
 
     static ArrayList<Integer> mergeSorted(ArrayList<Integer> tab1, ArrayList<Integer> tab2){
         ArrayList<Integer> res = new ArrayList<Integer>();
-        
+
         Collections.sort(tab1);
         Collections.sort(tab2);
 
@@ -221,13 +221,14 @@ public class Zestaw3 {
     // Przykład: tab=[1,4,5,5,7,7] wynik -> [[1,1], [4,1], [5,2], [7,2]]
 
 
-    static ArrayList<ArrayList<Integer>> countArrayList(ArrayList<String> tab) {
+    static ArrayList<ArrayList<Integer>> countArrayList(ArrayList<Integer> tab) {
         ArrayList<ArrayList<Integer>> wynik = new ArrayList<>();
 
         for (int i = 0; i < tab.size(); i++) {
-            int liczba ==tab.get(i);
+            int liczba = tab.get(i);
             int znaleziony = -1;
 
+           
             for (int j = 0; j < wynik.size(); j++) {
                 if (wynik.get(j).get(0) == liczba) {
                     znaleziony = j;
@@ -236,48 +237,17 @@ public class Zestaw3 {
             }
 
             if (znaleziony == -1) {
+               
                 ArrayList<Integer> para = new ArrayList<>();
                 para.add(liczba);
                 para.add(1);
                 wynik.add(para);
             } else {
+                
                 int ile = wynik.get(znaleziony).get(1);
-
                 wynik.get(znaleziony).set(1, ile + 1);
             }
         }
         return wynik;
     }
-
-    }
-}
-
-static ArrayList<ArrayList<Integer>> countArrayList(ArrayList<Integer> tab) {
-    ArrayList<ArrayList<Integer>> wynik = new ArrayList<>();
-
-    for (int i = 0; i < tab.size(); i++) {
-        int liczba = tab.get(i);
-        int znaleziony = -1;
-
-        // Sprawdzamy, czy liczba już jest w wynik
-        for (int j = 0; j < wynik.size(); j++) {
-            if (wynik.get(j).get(0) == liczba) {
-                znaleziony = j;
-                break;
-            }
-        }
-
-        if (znaleziony == -1) {
-            // Nie ma -> dodaj nową parę [liczba, 1]
-            ArrayList<Integer> para = new ArrayList<>();
-            para.add(liczba);
-            para.add(1);
-            wynik.add(para);
-        } else {
-            // Jest -> zwiększ licznik
-            int ile = wynik.get(znaleziony).get(1);
-            wynik.get(znaleziony).set(1, ile + 1);
-        }
-    }
-    return wynik;
 }
