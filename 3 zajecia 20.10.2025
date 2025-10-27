@@ -201,55 +201,41 @@ public class Zestaw3 {
             if (!unikalne.contains(liczba)) {
                 unikalne.add(liczba);
             }
+
+// Zadanie 8.
+// Napisz funkcje
+//      countArrayList(ArrayList<String> tab)
+//      countArrayList(ArrayList<Integer> tab),
+// które tworzą dwuwymiarową listę tablicową, w której
+// zliczana jest ilość występujących cyfr/znaków z tablic z zadania 4.
+// Przykład: tab=[1,4,5,5,7,7] wynik -> [[1,1], [4,1], [5,2], [7,2]]
+
+static ArrayList<ArrayList<Integer>> countArrayList(ArrayList<Integer> tab) {
+    ArrayList<ArrayList<Integer>> wynik = new ArrayList<>();
+
+    for (int i = 0; i < tab.size(); i++) {
+        int liczba = tab.get(i);
+        int znaleziony = -1;
+
+        for (int j = 0; j < wynik.size(); j++) {
+            if (wynik.get(j).get(0) == liczba) {
+                znaleziony = j;
+                break;
+            }
         }
 
-        for (int i = 0; i < unikalne.size(); i++){
+        if (znaleziony == -1) {
             ArrayList<Integer> para = new ArrayList<>();
-            para.add(unikalne.get(i));
-            para.add(0);
+            para.add(liczba);
+            para.add(1);
             wynik.add(para);
+        } else {
+            int ile = wynik.get(znaleziony).get(1);
+            wynik.get(znaleziony).set(1, ile + 1);
         }
-        return wynik;
     }
-
-    // Zadanie 8.
-    // Napisz funkcje
-    // 		countArrayList(ArrayList<String> tab)
-    // 		countArrayList(ArrayList<Integer> tab),
-    // które tworzą dwuwymiarową listę tablicową, w której
-    // zliczana jest ilość występujących cyfry/znaków z tablic z zadania 4
-    // Przykład: tab=[1,4,5,5,7,7] wynik -> [[1,1], [4,1], [5,2], [7,2]]
-
-
-    static ArrayList<ArrayList<Integer>> countArrayList(ArrayList<Integer> tab) {
-        ArrayList<ArrayList<Integer>> wynik = new ArrayList<>();
-
-        for (int i = 0; i < tab.size(); i++) {
-            int liczba = tab.get(i);
-            int znaleziony = -1;
-
-           
-            for (int j = 0; j < wynik.size(); j++) {
-                if (wynik.get(j).get(0) == liczba) {
-                    znaleziony = j;
-                    break;
-                }
-            }
-
-            if (znaleziony == -1) {
-               
-                ArrayList<Integer> para = new ArrayList<>();
-                para.add(liczba);
-                para.add(1);
-                wynik.add(para);
-            } else {
-                
-                int ile = wynik.get(znaleziony).get(1);
-                wynik.get(znaleziony).set(1, ile + 1);
-            }
-        }
-        return wynik;
-    }
+    return wynik;
+}
 
 static ArrayList<ArrayList<String>> countArrayList(ArrayList<String> tab) {
     ArrayList<ArrayList<String>> wynik = new ArrayList<>();
@@ -275,7 +261,30 @@ static ArrayList<ArrayList<String>> countArrayList(ArrayList<String> tab) {
             wynik.get(znaleziony).set(1, String.valueOf(ile));
         }
     }
-
     return wynik;
 }
-}
+
+        for (int i = 0; i < unikalne.size(); i++){
+            ArrayList<Integer> para = new ArrayList<>();
+            para.add(unikalne.get(i));
+            para.add(0);
+            wynik.add(para);
+        }
+        return wynik;
+    }
+
+    // Zadanie 8.
+    // Napisz funkcje
+    // 		countArrayList(ArrayList<String> tab)
+    // 		countArrayList(ArrayList<Integer> tab),
+    // które tworzą dwuwymiarową listę tablicową, w której
+    // zliczana jest ilość występujących cyfry/znaków z tablic z zadania 4
+    // Przykład: tab=[1,4,5,5,7,7] wynik -> [[1,1], [4,1], [5,2], [7,2]]
+
+
+    static ArrayList<ArrayList<Integer>> countArrayList(ArrayList<Integer> tab) {
+        ArrayList<ArrayList<Integer>> wynik = new ArrayList<>();
+
+        for (int i = 0; i < tab.size(); i++) {
+            int liczba = tab.get(i);
+            int znaleziony = 
