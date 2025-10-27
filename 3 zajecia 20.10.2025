@@ -87,6 +87,9 @@ public class Zestaw3 {
 
     static ArrayList<Integer> mergeSorted(ArrayList<Integer> tab1, ArrayList<Integer> tab2){
         ArrayList<Integer> res = new ArrayList<Integer>();
+        
+        Collections.sort(tab1);
+        Collections.sort(tab2);
 
         int i = 0;
         int j = 0;
@@ -128,7 +131,7 @@ public class Zestaw3 {
 
     }
 
-    static ArrayList<Integer> ToArrayList(int liczba) {
+    static ArrayList<Integer> toArrayList(int liczba) {
         ArrayList<Integer> lista = new ArrayList<Integer>();
         String s = String.valueOf(liczba);
         for (int i = 0; i < s.length(); i++) {
@@ -189,13 +192,13 @@ public class Zestaw3 {
     // a każda z wartości ma przyporządkowane 0.
     // Przykład: tab=[1,4,5,5,7,7] wynik -> [[1,0], [4,0], [5,0], [7,0]]
 
-    static ArrayList uniqueArrayList(ArrayList<String> tab){
+    static ArrayList<ArrayList<Integer>> uniqueArrayList(ArrayList<Integer> tab){
         ArrayList<ArrayList<Integer>> wynik = new ArrayList<>();
         ArrayList<Integer> unikalne = new ArrayList<>();
 
         for(int i = 0; i < tab.size(); i++){
             int liczba = tab.get(i);
-            if (! unikalne.contains(liczba)) {
+            if (!unikalne.contains(liczba)) {
                 unikalne.add(liczba);
             }
         }
@@ -218,27 +221,33 @@ public class Zestaw3 {
     // Przykład: tab=[1,4,5,5,7,7] wynik -> [[1,1], [4,1], [5,2], [7,2]]
 
 
-    static void zadanie_8(){
+    static ArrayList<ArrayList<Integer>> countArrayList(ArrayList<String> tab) {
+        ArrayList<ArrayList<Integer>> wynik = new ArrayList<>();
 
-    }
-}
+        for (int i = 0; i < tab.size(); i++) {
+            int liczba ==tab.get(i);
+            int znaleziony = -1;
 
-static ArrayList<ArrayList<Integer>> uniqueArrayList(ArrayList<Integer> tab){
-    ArrayList<ArrayList<Integer>> wynik = new ArrayList<>();
-    ArrayList<Integer> unikalne = new ArrayList<>();
+            for (int j = 0; j < wynik.size(); j++) {
+                if (wynik.get(j).get(0) == liczba) {
+                    znaleziony = j;
+                    break;
+                }
+            }
 
-    for(int i = 0; i < tab.size(); i++){
-        int liczba = tab.get(i);
-        if (!unikalne.contains(liczba)) {
-            unikalne.add(liczba);
+            if (znaleziony == -1) {
+                ArrayList<Integer> para = new ArrayList<>();
+                para.add(liczba);
+                para.add(1);
+                wynik.add(para);
+            } else {
+                int ile = wynik.get(znaleziony).get(1);
+
+                wynik.get(znaleziony).set(1, ile + 1);
+            }
         }
+        return wynik;
     }
 
-    for (int i = 0; i < unikalne.size(); i++){
-        ArrayList<Integer> para = new ArrayList<>();
-        para.add(unikalne.get(i));
-        para.add(0);
-        wynik.add(para);
     }
-    return wynik;
 }
