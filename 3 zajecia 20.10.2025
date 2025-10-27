@@ -6,7 +6,7 @@ import java.util.Collections;
 public class Zestaw3 {
     // Zadanie 0.
     // Napisz funkcję główną (main).
-    public static void main(String[] args){
+    public static void main(String[] args) {
         ArrayList<Integer> tab1 = new ArrayList<Integer>();
         ArrayList<Integer> tab2 = new ArrayList<Integer>();
 
@@ -33,14 +33,14 @@ public class Zestaw3 {
     // która tworzy nową listę tablicową poprzez
     // dołączenie drugiej listy tablicowej do pierwszej.
 
-    static ArrayList<Integer> append(ArrayList<Integer> tab1, ArrayList<Integer> tab2){
+    static ArrayList<Integer> append(ArrayList<Integer> tab1, ArrayList<Integer> tab2) {
         ArrayList<Integer> res = new ArrayList<Integer>();
 
-        for(int i = 0; i < tab1.size(); i++){
+        for (int i = 0; i < tab1.size(); i++) {
             res.add(tab1.get(i));
         }
 
-        for(int i = 0; i < tab2.size(); i++){
+        for (int i = 0; i < tab2.size(); i++) {
             res.add(tab2.get(i));
         }
 
@@ -55,22 +55,22 @@ public class Zestaw3 {
     // że elementy wstawiane są na przemian. W przypadku, gdy skończą się
     // elementy jednej listy to do wyniku należy dołączyć pozostałe elementy.
 
-    static ArrayList<Integer> merge(ArrayList<Integer> tab1, ArrayList<Integer> tab2){
+    static ArrayList<Integer> merge(ArrayList<Integer> tab1, ArrayList<Integer> tab2) {
         ArrayList<Integer> res = new ArrayList<Integer>();
         int i = 0;
         int j = 0;
-        while(i < tab1.size() && j < tab2.size()){
+        while (i < tab1.size() && j < tab2.size()) {
             res.add(tab1.get(i));
             res.add(tab2.get(j));
             i++;
             j++;
         }
 
-        while(i < tab1.size()){
+        while (i < tab1.size()) {
             res.add(tab1.get(i));
             i++;
         }
-        while(j < tab2.size()){
+        while (j < tab2.size()) {
             res.add(tab2.get(j));
             j++;
         }
@@ -85,7 +85,7 @@ public class Zestaw3 {
     // dołączenie drugiej listy tablicowej do pierwszej w taki sposób,
     // że elementy wstawiane są w porządku rosnącym.
 
-    static ArrayList<Integer> mergeSorted(ArrayList<Integer> tab1, ArrayList<Integer> tab2){
+    static ArrayList<Integer> mergeSorted(ArrayList<Integer> tab1, ArrayList<Integer> tab2) {
         ArrayList<Integer> res = new ArrayList<Integer>();
 
         Collections.sort(tab1);
@@ -94,11 +94,11 @@ public class Zestaw3 {
         int i = 0;
         int j = 0;
 
-        while(i < tab1.size() && j < tab2.size()){
+        while (i < tab1.size() && j < tab2.size()) {
             if (tab1.get(i) < tab2.get(j)) {
                 res.add(tab1.get(i));
                 i++;
-            } else{
+            } else {
                 res.add(tab2.get(j));
                 j++;
             }
@@ -122,7 +122,7 @@ public class Zestaw3 {
 
     static ArrayList<String> toArrayList(String napis) {
         ArrayList<String> lista = new ArrayList<String>();
-        for (int i = 0; i < napis.length(); i++){
+        for (int i = 0; i < napis.length(); i++) {
 
             lista.add(String.valueOf(napis.charAt(i)));
         }
@@ -148,17 +148,18 @@ public class Zestaw3 {
     // które sprawdzają czy podany znak/cyfra jest w liście
     // tablicowej z zadania 4 i zwracają true lub false.
 
-    static boolean checkChar(ArrayList<String> tab, char znak){
-        for (int i = 0; i < tab.size(); i++){
+    static boolean checkChar(ArrayList<String> tab, char znak) {
+        for (int i = 0; i < tab.size(); i++) {
             if (tab.get(i).charAt(0) == znak) return true;
         }
         return false;
     }
 
-    static boolean checkDigit(ArrayList<Integer> tab, int cyfra){
-        for (int i = 0; i < tab.size(); i++){
+    static boolean checkDigit(ArrayList<Integer> tab, int cyfra) {
+        for (int i = 0; i < tab.size(); i++) {
             if (tab.get(i) == cyfra) return true;
-        } return false;
+        }
+        return false;
     }
 
     // Zadanie 6.
@@ -168,17 +169,17 @@ public class Zestaw3 {
     // które zliczają występowanie podanego znaku/cyfry
     // w liście tablicowej z zadania 4 i zwracają ilość zliczonych elementów.
 
-    static int countChar(ArrayList<String> tab, char znak){
+    static int countChar(ArrayList<String> tab, char znak) {
         int licznik = 0;
-        for (int i = 0; i < tab.size(); i++){
+        for (int i = 0; i < tab.size(); i++) {
             if (tab.get(i).charAt(0) == znak) licznik++;
         }
         return licznik;
     }
 
-    static int countDigit(ArrayList<Integer> tab, int cyfra){
+    static int countDigit(ArrayList<Integer> tab, int cyfra) {
         int licznik = 0;
-        for (int i = 0; i < tab.size(); i++){
+        for (int i = 0; i < tab.size(); i++) {
             if (tab.get(i) == cyfra) licznik++;
         }
         return licznik;
@@ -192,15 +193,18 @@ public class Zestaw3 {
     // a każda z wartości ma przyporządkowane 0.
     // Przykład: tab=[1,4,5,5,7,7] wynik -> [[1,0], [4,0], [5,0], [7,0]]
 
-    static ArrayList<ArrayList<Integer>> uniqueArrayList(ArrayList<Integer> tab){
+    static ArrayList<ArrayList<Integer>> uniqueArrayList(ArrayList<Integer> tab) {
         ArrayList<ArrayList<Integer>> wynik = new ArrayList<>();
         ArrayList<Integer> unikalne = new ArrayList<>();
 
-        for(int i = 0; i < tab.size(); i++){
+        for (int i = 0; i < tab.size(); i++) {
             int liczba = tab.get(i);
             if (!unikalne.contains(liczba)) {
                 unikalne.add(liczba);
             }
+        }
+        return wynik;
+    }
 
 // Zadanie 8.
 // Napisz funkcje
@@ -210,81 +214,54 @@ public class Zestaw3 {
 // zliczana jest ilość występujących cyfr/znaków z tablic z zadania 4.
 // Przykład: tab=[1,4,5,5,7,7] wynik -> [[1,1], [4,1], [5,2], [7,2]]
 
-static ArrayList<ArrayList<Integer>> countArrayList(ArrayList<Integer> tab) {
-    ArrayList<ArrayList<Integer>> wynik = new ArrayList<>();
-
-    for (int i = 0; i < tab.size(); i++) {
-        int liczba = tab.get(i);
-        int znaleziony = -1;
-
-        for (int j = 0; j < wynik.size(); j++) {
-            if (wynik.get(j).get(0) == liczba) {
-                znaleziony = j;
-                break;
-            }
-        }
-
-        if (znaleziony == -1) {
-            ArrayList<Integer> para = new ArrayList<>();
-            para.add(liczba);
-            para.add(1);
-            wynik.add(para);
-        } else {
-            int ile = wynik.get(znaleziony).get(1);
-            wynik.get(znaleziony).set(1, ile + 1);
-        }
-    }
-    return wynik;
-}
-
-static ArrayList<ArrayList<String>> countArrayList(ArrayList<String> tab) {
-    ArrayList<ArrayList<String>> wynik = new ArrayList<>();
-
-    for (int i = 0; i < tab.size(); i++) {
-        String znak = tab.get(i);
-        int znaleziony = -1;
-
-        for (int j = 0; j < wynik.size(); j++) {
-            if (wynik.get(j).get(0).equals(znak)) {
-                znaleziony = j;
-                break;
-            }
-        }
-
-        if (znaleziony == -1) {
-            ArrayList<String> para = new ArrayList<>();
-            para.add(znak);
-            para.add("1");
-            wynik.add(para);
-        } else {
-            int ile = Integer.parseInt(wynik.get(znaleziony).get(1)) + 1;
-            wynik.get(znaleziony).set(1, String.valueOf(ile));
-        }
-    }
-    return wynik;
-}
-
-        for (int i = 0; i < unikalne.size(); i++){
-            ArrayList<Integer> para = new ArrayList<>();
-            para.add(unikalne.get(i));
-            para.add(0);
-            wynik.add(para);
-        }
-        return wynik;
-    }
-
-    // Zadanie 8.
-    // Napisz funkcje
-    // 		countArrayList(ArrayList<String> tab)
-    // 		countArrayList(ArrayList<Integer> tab),
-    // które tworzą dwuwymiarową listę tablicową, w której
-    // zliczana jest ilość występujących cyfry/znaków z tablic z zadania 4
-    // Przykład: tab=[1,4,5,5,7,7] wynik -> [[1,1], [4,1], [5,2], [7,2]]
-
-
     static ArrayList<ArrayList<Integer>> countArrayList(ArrayList<Integer> tab) {
         ArrayList<ArrayList<Integer>> wynik = new ArrayList<>();
 
         for (int i = 0; i < tab.size(); i++) {
             int liczba = tab.get(i);
-            int znaleziony = 
+            boolean znaleziono = false;
+
+            for (ArrayList<Integer> para : wynik) {
+                if (para.get(0) == liczba) {
+                    para.set(1, para.get(1) + 1);
+                    znaleziono = true;
+                    break;
+                }
+            }
+
+            if (!znaleziono) {
+                ArrayList<Integer> para = new ArrayList<>();
+                para.add(liczba);
+                para.add(1);
+                wynik.add(para);
+            }
+        }
+
+        return wynik;
+    }
+    
+    static ArrayList<ArrayList<Object>> countArrayListString(ArrayList<String> tab) {
+        ArrayList<ArrayList<Object>> wynik = new ArrayList<>();
+
+        for (int i = 0; i < tab.size(); i++) {
+            String znak = tab.get(i);
+            boolean znaleziono = false;
+
+            for (ArrayList<Object> para : wynik) {
+                if (para.get(0).equals(znak)) {
+                    para.set(1, (Integer) para.get(1) + 1);
+                    znaleziono = true;
+                    break;
+                }
+            }
+
+            if (!znaleziono) {
+                ArrayList<Object> para = new ArrayList<>();
+                para.add(znak);
+                para.add(1);
+                wynik.add(para);
+            }
+        }
+        return wynik;
+    }
+}
