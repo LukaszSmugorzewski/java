@@ -250,4 +250,32 @@ public class Zestaw3 {
         }
         return wynik;
     }
+
+static ArrayList<ArrayList<String>> countArrayList(ArrayList<String> tab) {
+    ArrayList<ArrayList<String>> wynik = new ArrayList<>();
+
+    for (int i = 0; i < tab.size(); i++) {
+        String znak = tab.get(i);
+        int znaleziony = -1;
+
+        for (int j = 0; j < wynik.size(); j++) {
+            if (wynik.get(j).get(0).equals(znak)) {
+                znaleziony = j;
+                break;
+            }
+        }
+
+        if (znaleziony == -1) {
+            ArrayList<String> para = new ArrayList<>();
+            para.add(znak);
+            para.add("1");
+            wynik.add(para);
+        } else {
+            int ile = Integer.parseInt(wynik.get(znaleziony).get(1)) + 1;
+            wynik.get(znaleziony).set(1, String.valueOf(ile));
+        }
+    }
+
+    return wynik;
+}
 }
