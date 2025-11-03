@@ -20,6 +20,8 @@ magazynSklepu. Odpowiednio zaktualizuj konstruktor. Data powstania nie może by�
 
 5. Nadpisz metodę getClass, która zwraca napis „Cześć jestem klasą <nazwa klasy>"
 
+nie da sie 
+
 6. Nadpisz metodę hashCode, która zwraca hash w podanych klasach: 
 Produkt: hash dla nazwy i ceny
 Platnosc: hash dla kwoty i statusu płatności 
