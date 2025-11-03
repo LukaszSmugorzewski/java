@@ -38,6 +38,42 @@ Platnosc: posiada identyczną kwotę i status płatności
 Klient: posiada identyczne imię, nazwisko oraz adres
 
 
+package Zestaw4;
+
+public class Test {
+    public static void main(String[] args){
+        Sklep sklep = new Sklep();
+        Produkt p1 = new Produkt("Mleko", 4, 99);
+        Produkt p2 = new Produkt("Mąka", 20, 120);
+        Produkt p3 = new Produkt("Papier Toaletowy", 200, 3);
+        sklep.dodajProdukt(p1);
+        sklep.dodajProdukt(p2);
+        sklep.dodajProdukt(p3);
+        sklep.wyswietlOferty();
+        System.out.println();
+
+        KoszykZakupowy koszyk1 = new KoszykZakupowy();
+        sklep.zakupy(koszyk1, sklep.wyszukajProdukt("Mleko"), 6);
+        sklep.zakupy(koszyk1, sklep.wyszukajProdukt("Mąka"), 12);
+        sklep.zakupy(koszyk1, sklep.wyszukajProdukt("Papier Toaletowy"), 100);
+
+
+        Zamowienie zamowienie1 = new Zamowienie(koszyk1, Zamowienie.StatusZamowienia.ZLOZONE);
+        zamowienie1.zwrocProdukt(sklep, sklep.wyszukajProdukt("Mąka"), 2);
+        zamowienie1.platnosc.zaplac();
+        zamowienie1.finalizujZamowienie();
+        zamowienie1.wyswietlZamowienie();
+        System.out.println();
+
+        Klient klient = new Klient("James", "Błąd");
+        klient.dodajZamowienie(zamowienie1);
+        klient.wyswietlHistorieZamowien();
+        System.out.println(klient.oblicLacznyKosztZamowien());
+        System.out.println();
+
+
+    }
+}
 
 
 package Zestaw4;
