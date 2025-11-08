@@ -131,4 +131,13 @@ public class lekcja5 {
 
 ==========================================================================lekcja 6=====================================================
 
+public class lekcja6 {
+    public static void main(String[] args){
+        int poraRoku = 1;
+
+        switch (poraRoku){
+            case 
+        }
+    }
+}
 
