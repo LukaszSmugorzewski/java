@@ -67,3 +67,68 @@ public class lekcja2 {
         System.out.println("double " + zmDouble + " - " + zmDouble2);
     }
 }
+
+==============================================================================================lekcja 3 ==================================================================
+
+public class lekcja3 {
+    public static void main(String[] args){
+        int x = 20;
+        int b = 10;
+        double wynik = (double) x / (double) b;
+        System.out.println(wynik);
+
+        System.out.println(x + 140); // Dodawanie
+        System.out.println(x - 31);  // Odejmowanie
+        System.out.println(x * 7);   // Mnożenie
+        System.out.println(x / 13);  // Dzielenie
+        System.out.println(x % 7);   // Reszta z dzielenia (modulo)
+        System.out.println(x / 4);   // Dzielenie
+        System.out.println(Math.pow(x, 45)); // Potęgowanie
+        System.out.println(x & 67);  // Operacja bitowa AND
+        System.out.println(x | 59);  // Operacja bitowa OR
+        System.out.println(x ^ 23);  // Operacja bitowa XOR
+        System.out.println(x << 5);  // Przesunięcie bitowe w lewo
+        System.out.println(x >> 6);  // Przesunięcie bitowe w prawo
+
+    }
+}
+
+===========================================================================lekcja 4=========================================================
+
+tutaj bylo tylko 
+
+== - porównanie
+&& - dwa lub wiecej warunków musi zostac spełnione
+|| - conajmniej jeden warunek musi byc spelniony
+
+
+==========================================================================lekcja 5 =====================================================
+
+public class lekcja5 {
+    public static void main(String[] args) {
+        if (5 > 2) {
+            System.out.println("prawda");
+        }
+        if (2 < 5) {
+            System.out.println("Fałsz");
+            System.out.println("Fałsz");
+        }
+
+
+        int wiek = 1;
+        if (wiek > 18) {
+            System.out.println("pełnoletnia");
+        } else if (wiek >= 16) {
+            System.out.println("Mozesz pracowac");
+        } else {
+            System.out.println("Nie pełnoletnia");
+        }
+
+        String imie = wiek >= 19 ? "Bartek" : "Łukasz";
+        System.out.println(imie);
+    }
+}
+
+==========================================================================lekcja 6=====================================================
+
+
