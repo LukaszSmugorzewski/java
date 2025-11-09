@@ -132,12 +132,91 @@ public class lekcja5 {
 ==========================================================================lekcja 6=====================================================
 
 public class lekcja6 {
-    public static void main(String[] args){
+    public static void main(String[] args) {
         int poraRoku = 1;
 
         switch (poraRoku){
-            case 
+            case 1:
+                System.out.println("Wiosna");
+                break;
+            case 2:
+                System.out.println("Lato");
+                break;
+            case 3:
+                System.out.println("Jesień");
+                break;
+            case 4:
+                System.out.println("Zima");
+                break;
+            default:
+                System.out.println("Żyjesz na innej planecie");
         }
+
     }
 }
 
+==========================================================================lekcja 7==================================================
+
+public class lekcja7 {
+    public static void main(String[] args){
+
+        System.out.println("pętla while");
+        int i = 5;
+        while (i > 0) {
+            System.out.println(i);
+            i--;
+        }
+
+        System.out.println("pętla do");
+
+        int j = 5;
+        do{
+            System.out.println(j);
+            j--;
+        } while(j > 0);
+
+        System.out.println("pętla for");
+
+
+        for (int k = 5; k > 0; k--){
+            System.out.println(k);
+        }
+
+    }
+}
+
+==================================================================lekcja 8==========================================================
+
+import java.util.Random;
+import java.util.Scanner;
+
+public class lekcja8 {
+    public static void main(String[] args) {
+        int i = 0;
+        int losowa;
+        int odp;
+
+        Random rnd = new Random();
+        losowa = rnd.nextInt(10) + 1;
+
+        Scanner scn = new Scanner(System.in);
+
+        System.out.println("Podaj liczbę od 1 do 10");
+
+        do{
+            i++;
+            System.out.print("podaj liczbę: ");
+            odp = scn.nextInt();
+            if(odp > losowa){
+                System.out.println("Niestety nie zgadłeś, twoja liczba jest za duża");
+            }
+            if(odp < losowa){
+                System.out.println("Niestety nie zgadłeś, twoja liczba jest za mała");
+            }
+
+        } while (losowa != odp);
+        System.out.println("Zgadłeś za " + i + " razem");
+    }
+}
+
+===========================================================lekcja 9=========================================================
